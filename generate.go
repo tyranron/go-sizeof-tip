@@ -16,9 +16,14 @@ var Table = []row{
 	row{[]string{"bool"}, []uintptr{unsafe.Sizeof(true)}},
 	row{[]string{"int8", "uint8", "byte"}, []uintptr{unsafe.Sizeof(byte(0))}},
 	row{[]string{"int16", "uint16"}, []uintptr{unsafe.Sizeof(int16(0))}},
-	row{[]string{"int32", "uint32"}, []uintptr{unsafe.Sizeof(int32(0))}},
-	row{[]string{"int64", "uint64", "rune"}, []uintptr{unsafe.Sizeof(rune(0))}},
-	row{[]string{"int"}, []uintptr{unsafe.Sizeof(int32(0)), unsafe.Sizeof(rune(0))}},
+	row{[]string{"int32", "uint32", "rune"}, []uintptr{unsafe.Sizeof(rune(0))}},
+	row{[]string{"int64", "uint64"}, []uintptr{unsafe.Sizeof(int64(0))}},
+	row{[]string{"int", "uint"}, []uintptr{unsafe.Sizeof(int32(0)), unsafe.Sizeof(int64(0))}},
+	row{[]string{"uintptr"}, []uintptr{unsafe.Sizeof(uintptr(0))}},
+	row{[]string{"float32"}, []uintptr{unsafe.Sizeof(float32(0))}},
+	row{[]string{"float64"}, []uintptr{unsafe.Sizeof(float64(0))}},
+	row{[]string{"complex64"}, []uintptr{unsafe.Sizeof(complex(float32(0), float32(0)))}},
+	row{[]string{"complex128"}, []uintptr{unsafe.Sizeof(complex(float64(0), float64(0)))}},
 }
 
 func main() {
