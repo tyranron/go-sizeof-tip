@@ -42,7 +42,7 @@ Examples:
 | Type | `Sizeof()` bytes |
 | ---- | ---------------: |
 | `[5]bool` | 5 |
-| `[2][]bool` | 48 |
+| `[2][]bool{}` | 48 |
 
 
 
@@ -59,7 +59,7 @@ Examples:
 
 | Type | `StructPackSize` | `PacksNum` | `Sizeof()` bytes |
 | ---- | ---------------: | ---------: | ---------------: |
-| `struct{a struct{}}` | 0 | 1 | 1 |
+| `struct{a struct{}}` | 0 | 1 | 0 |
 | `struct{a struct{}; b bool}` | 1 | 1 | 1 |
 | `struct{b bool; u int32}` | 4 | 2 | 8 |
 | `struct{a bool; b bool; u int32}` | 4 | 2 | 8 |
